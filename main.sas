@@ -76,7 +76,7 @@ run;
 	balance = &balance + &deposit_amount;
 	deposit_amount = &deposit_amount;
 	run;
-	proc print data = temp; 0794664765
+	proc print data = temp; 
 	where user_id = &user_id and pin_ = &pin_; 
 
 run;
