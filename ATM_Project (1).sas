@@ -18,21 +18,21 @@ data work.history;
   format withdraw_amount rand8.2;
   format deposit_amount rand8.2;
   datalines;
-  123 01/04/2022 10:00 200 700
-  345 20/09/2022 13:30 500 15000 
-  567 02/02/2022 09:20 0 5000
-  789 13/10/2022 17:50 3000 0
-  910 25/11/2022 20:03 1000 0
+  123 01/04/2022 10:00 0 0
+  345 20/09/2022 13:30 0 0 
+  567 02/02/2022 09:20 0 0
+  789 13/10/2022 17:50 0 0
+  910 25/11/2022 20:03 0 0
   ;
   run;
-proc print data=history;
+proc print data=work.history;
 RUN;
 
-proc sort data = details;
+proc sort data = work.details;
 by user_id;
 run;
 
-proc sort data = history;
+proc sort data = work.history;
 by user_id;
 run;
 
@@ -75,12 +75,12 @@ run;
 	balance = &balance + &deposit_amount;
 	deposit_amount = &deposit_amount;
 	run;
-	proc print data = temp;
+	proc print data = temp; 0794664765
 	where user_id = &user_id and pin_ = &pin_; 
 
 run;
 %MEND bank_acc;
-%bank_acc(user_id=345,pin_=2222,deposit_amount=1000,balance=0);
+%bank_acc(user_id=345,pin_=2222,deposit_amount=2000,balance=0);
 
 
 data bank_details;
@@ -110,6 +110,7 @@ run;
 
 proc print data = work.bank_details;
 run;
+ 
  
  
  
