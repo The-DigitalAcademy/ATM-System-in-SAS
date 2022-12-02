@@ -12,6 +12,7 @@ data work.details;
    proc print data=details;
 RUN;
 
+
 data work.history;
   input user_id date ddmmyy10. time time6. withdraw_amount deposit_amount;
   format date date10.;
