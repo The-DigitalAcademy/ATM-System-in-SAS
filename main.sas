@@ -130,7 +130,19 @@ run;
     withdraw = &withdraw_amount;
     run;
     %end; 
- 
+  %else %do;
+    %put 'WARNING: ' Insufficient funds your balance R&balance and you want to withdraw R&withdraw_amount;
+    balance = &balance;
+    withdraw = &withdraw_amount;
+    %end;
+    proc print data = temp;
+    where user_id = &userid and pin = &pin_; 
+    Title Withdrawal Date &SYSDATE at Time &SYSTIME;
+    run;
+run;
+%MEND bank_acc;
+%bank_acc(userid=345,pin=2222,withdraw_amount=2000,balance=1000);
+
 
 
 
