@@ -114,7 +114,12 @@ run;
  
  
  
- 
+ %MACRO bank_acc(userid=, pin=, withdraw_amount=, balance=);
+%put user_id = &userid;
+%put balance = &balance;
+%put pin = &pin_;
+%put withdraw_amount = &withdraw_amount;
+
  
 
  
