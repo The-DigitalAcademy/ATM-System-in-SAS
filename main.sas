@@ -121,8 +121,15 @@ run;
 %put withdraw_amount = &withdraw_amount;
 
  
-
- 
+  data temp;
+    user_id = &userid;
+    pin = &pin_;
+    %if &balance > &withdraw_amount  %then
+    %do;
+    balance = &balance - &withdraw_amount ;
+    withdraw = &withdraw_amount;
+    run;
+    %end; 
  
 
 
