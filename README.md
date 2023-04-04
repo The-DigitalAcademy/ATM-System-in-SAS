@@ -5,7 +5,9 @@
 
 # Project Name: ATM SYSTEM ANALYSIS IN SAS
 
-#On this project, we doing an analysis for ATM system. The system should allow user to deposit and withdraw.
+On this project, we doing an analysis for ATM system.
+
+The system should allow user to deposit and withdraw.
 
 # Technologies Used are:
 
